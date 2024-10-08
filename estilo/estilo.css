@@ -1,1 +1,107 @@
 /*Manuel Méndez Fernández UO294186*/
+
+/*Especificidad: (0, 0, 1)*/
+body{
+    font-family: Arial, sans-serif;
+    background-color: #99EEFF;
+    color: #000000;
+}
+
+/*Especificidad: (0, 0, 1)*/
+header{
+    background-color: #E6FF29;
+    color: #001A99;
+    border-style: groove;
+}
+
+nav a{
+    border-style:double;
+}
+/*Especificidad: (0, 0, 2)*/
+h1 a{
+    text-decoration-line: none;
+}
+/*Especificidad: (0, 0, 1)*/
+h1{
+    font-family: 'Georgia', serif;
+}
+/*Especificidad: (0, 0, 1)*/
+h2{
+    font-family: 'Arial Black', sans-serif;
+    font-style: italic;
+}
+/*Especificidad: (0, 1, 2)*/
+body > p:first-of-type{
+    font-size: 0.8em;
+}
+
+/*Especificidad: (0, 1, 2)*/
+main a:link{
+    /*Advertencia por no especificar color de fondo. Lo hereda de body*/
+    color: #410075;
+}
+/*Especificidad: (0, 1, 2)*/
+main a:visited{
+    /*Advertencia por no especificar color de fondo. Lo hereda de body*/
+    color: #850000;
+}
+/*Especificidad: (0, 0, 1)*/
+ul{
+    list-style-type: "►";
+}
+/*Especificidad: (0, 0, 1)*/
+ol{
+    list-style-type: upper-roman;
+}
+/*Especificidad: (0, 0, 2)*/
+dl ul{
+    list-style-type: "-->";
+}
+/*Especificidad: (0, 0, 2)*/
+aside dt{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.05em;
+    background-color: #FCFF4D;
+}
+/*Especificidad: (0, 0, 1)*/
+table{
+    border: solid black;
+    width : 50%
+}
+/*Especificidad: (0, 0, 1)*/
+th{
+    background-color: #4DFE82;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+/*Especificidad: (0, 0, 1)*/
+td{
+    background-color: #FCFF4D;
+    text-align: center;
+}
+/*Especificidad: (0, 0, 1)*/
+video{
+    width:50%;
+    height:auto;
+}
+/*Especificidad: (0, 0, 1)*/
+audio{
+    width:20%;
+}
+
+/*Especificidad: (0, 1, 0)*/
+.active{
+    background-color: #3901A2;
+    color: #24FF99;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    body > p:first-of-type{
+        display: none;
+    }
+}
+
+
+
+
