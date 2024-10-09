@@ -98,8 +98,9 @@ audio{
     background-color: #3901A2;
     color: #24FF99;
 }
+
 /*Especificidad: (0, 1, 2)*/
-@media (width < 460px){
+@media (max-width : 460px){
     body > p:first-of-type{
         display: none;
     }
