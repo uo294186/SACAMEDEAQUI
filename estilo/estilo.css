@@ -99,7 +99,7 @@ audio{
     color: #24FF99;
 }
 /*Especificidad: (0, 1, 2)*/
-@media (width < 320px){
+@media (width < 460px){
     body > p:first-of-type{
         display: none;
     }
