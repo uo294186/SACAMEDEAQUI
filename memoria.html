@@ -5,25 +5,27 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <!--Titulo del documento-->
-    <title>Juegos</title>
+    <title>Juego de Memoria</title>
     <link rel="icon" href="multimedia/imágenes/F1Desktopfavicon.ico"/>
 
     <!--Autor del documento-->
     <meta name ="author" content="Manuel Méndez Fernández"/>
 
     <!--Descripción del documento-->
-    <meta name ="description" content="Juegos"/>
-
+    <meta name = "description" content="Juego de Memoria"/>
     <!--Palabras clave del contenido-->
-    <meta name="keywords" content="f1 juegos, formula1 juegos"/>
+    <meta name="keywords" content="f1 juegos, formula1 juegos, juegos memoria"/>
 
     <!--Definición ventana gráfica-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+
+    <!--hoja de estilo con el estilo para el juego-->
+    <link rel="stylesheet" type="text/css" href="estilo/memoria.css"/>
+    <script src="js/memoria.js"></script>
 </head>
 
 <body>
@@ -43,8 +45,10 @@
     </header>
 
     <p>
-        Estás en: <a href="index.html">Inicio</a> >> Juegos
+        Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Juego de Memoria  
     </p>
+
+   
 
     <h2>Juegos</h2>
     <p>Lista de juegos</p>
@@ -53,7 +57,15 @@
         <a href = "semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
         <a href = "api.html" title="Juego de Apuestas">Apuestas</a>
     </nav>
+    <section>
+        <h2>Juego de Memoria</h2>
+    </section>
+    
+
    
 
+    <script>
+        var memoria = new Memoria();
+    </script>
 </body>
 </html>

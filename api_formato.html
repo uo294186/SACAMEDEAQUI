@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <!--Titulo del documento-->
+    <title>Formato juego de apuestas</title>
+    <link rel="icon" href="multimedia/imágenes/F1Desktopfavicon.ico"/>
+
+    <!--Autor del documento-->
+    <meta name ="author" content="Manuel Méndez Fernández"/>
+
+    <!--Descripción del documento-->
+    <meta name = "description" content="Formato juego apuestas"/>
+    <!--Palabras clave del contenido-->
+    <meta name="keywords" content="f1 juegos, formula1 juegos, apuestas, formato"/>
+
+    <!--Definición ventana gráfica-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <!--hoja de estilo con el layout del documento-->
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+
+</head>
+
+<body>
+     <!-- Datos con el contenidos que aparece en el navegador -->
+     <header>
+        <h1><a href="index.html" title="Inicio">F1 Desktop</a></h1>
+        <nav>
+            <a href="index.html" title="Inicio">Inicio</a>
+            <a href="piloto.html" title="Piloto">Piloto</a>
+            <a href="noticias.html" title="Noticias">Noticias</a>
+            <a href="calendario.html" title="Calendario">Calendario</a>
+            <a href="meteorología.html" title ="Meteorología">Meteorología</a>
+            <a href="circuito.html" title="Circuito">Circuito</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
+            <a href="juegos.html" title="Juegos" class="active">Juegos</a>
+        </nav>
+    </header>
+
+    <p>
+        Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> <a href="api.html">Api</a> >> Formato
+    </p>
+
+   
+
+    <h2>Juegos</h2>
+    <p>Lista de juegos</p>
+    <nav>
+        <a href = "memoria.html" title="Juego de Memoria">Juego de Memoria</a>
+        <a href = "semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
+        <a href = "api.html" title="Juego de Apuestas">Api</a>
+    </nav>
+
+    <!--Este html existe para mostrar el formato que debe serguir los archivos que se quieran subir-->
+    <main>
+        <h2>Formato archivo</h2>
+        <p>En cada linea del archivo se debe escribir la cantidad a apostar y el nombre del piloto separados por un guión</p>
+        <p>Ejemplo: </p>
+
+        <pre>
+            100-Piloto 3
+            50-Piloto 3
+            80-Fernando Alonso
+        </pre>
+
+        <h2>CUIDADO</h2>
+        <p>La cantidad debe ser un numero positivo y la suma debe ser menor o igual a los puntos maximos</p>
+        <p>Este archivo sería válido para un jugador con 100 puntos: </p>
+        <pre>
+            50-Piloto 3
+            20-Piloto 3
+            30-Fernando Alonso
+        </pre>
+
+        <p>Este archivo NO sería válido</p>
+        <pre>
+            50-Piloto 3
+            50-Piloto 3
+            100-Fernando Alonso
+        </pre>
+
+        <p>El nombre del piloto debe ser igual al que se muestra en el juego, respetando espacios y mayúsculas</p>
+        <p>Si el piloto ganador es el Piloto 2:</p>
+        <p>Este valor contaría como ganador: </p>
+        <pre>
+            50-Piloto 2
+        </pre>
+
+        <p>Este NO contaría como ganador</p>
+        <pre>
+            50-piloto2
+        </pre>
+    </main>
+
+</body>
+</html>

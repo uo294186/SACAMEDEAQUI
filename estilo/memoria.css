@@ -1,0 +1,60 @@
+/*Especificidad: (0, 0, 1)*/
+section{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+/*Especificidad: (0, 0, 1)*/
+/*Advertencia por no especificar color de primer plano -> Lo hereda de body*/
+article{
+    background-color: #E6FF29;
+    margin: 0.5%;
+    height: 13em;
+    align-items: center;
+    justify-content: center;
+    flex: 20%;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    cursor: pointer;
+    
+}
+
+/*Especificidad: (0, 1, 1)*/
+article[data-state=flip],
+article[data-state=revealed]{
+    transform: rotateY(180deg);
+}
+
+/*Especificidad: (0, 0, 2)*/
+article h3, article img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/*Especificidad: (0, 0, 2)*/
+article img{
+    transform: rotateY(180deg);
+}
+
+/*Especificidad: (0, 0, 2)*/
+article h3{
+    font-size: 2vmin;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*Especificidad: (0, 0, 2)*/
+section h2{
+   flex-basis: 100%;
+   text-align: center;
+}

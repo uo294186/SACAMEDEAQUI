@@ -2,25 +2,48 @@
 
 /*Especificidad: (0, 0, 1)*/
 body{
+    width: 100%;
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #99EEFF;
     color: #000000;
+    background-color: #FFFFFF;
 }
 
 /*Especificidad: (0, 0, 1)*/
+/*Advertencia por no definir color de primer plano -> Lo hereda del body*/
 header{
-    background-color: #E6FF29;
-    color: #001A99;
-    border-style: groove;
+    background-color: #4C0061;
 }
 
-nav a{
-    border-style:double;
-}
 /*Especificidad: (0, 0, 2)*/
-h1 a{
+header a{
     text-decoration-line: none;
 }
+
+/*Especificidad: (0, 1, 2)*/
+/*Advertencia por no definir color de fondo -> Lo hereda del header*/
+header a:link{
+    color: #FFFB85;
+}
+
+/*Especificidad: (0, 1, 2)*/
+/*Advertencia por no definir color de fondo -> Lo hereda del header*/
+header a:hover{
+    color: #FFFB85;
+}
+
+/*Especificidad: (0, 1, 2)*/
+/*Advertencia por no definir color de fondo -> Lo hereda del header*/
+header a:visited{
+    color: #D6CF00;
+}
+
+/*Especificidad: (0, 0, 1)*/
+main{
+    margin: 0.8em;
+}
+
+
 /*Especificidad: (0, 0, 1)*/
 h1{
     font-family: 'Georgia', serif;
@@ -36,58 +59,75 @@ body > p:first-of-type{
 }
 
 /*Especificidad: (0, 1, 2)*/
+/*Advertencia por no especificar color de fondo -> Lo hereda de main*/
 main a:link{
-    /*Advertencia por no especificar color de fondo. Lo hereda de body*/
     color: #410075;
 }
+
 /*Especificidad: (0, 1, 2)*/
+/*Advertencia por no especificar color de fondo. Lo hereda de main*/
 main a:visited{
-    /*Advertencia por no especificar color de fondo. Lo hereda de body*/
     color: #850000;
 }
+
 /*Especificidad: (0, 0, 1)*/
 ul{
     list-style-type: "►";
 }
+
 /*Especificidad: (0, 0, 1)*/
 ol{
     list-style-type: upper-roman;
 }
+
 /*Especificidad: (0, 0, 2)*/
 dl ul{
     list-style-type: "-->";
 }
+
 /*Especificidad: (0, 0, 2)*/
 aside dt{
     font-weight: bold;
     font-style: italic;
     font-size: 1.05em;
-    /*Advertencia por no especificar color de primer plano. Lo hereda de body*/
-    background-color: #FCFF4D;
+    
+    background-color: #006128;
+    color: #FFFFFF;
 }
+
 /*Especificidad: (0, 0, 1)*/
 table{
     border: solid black;
     width : 50%
 }
+
 /*Especificidad: (0, 0, 1)*/
+/*Advertencia por no especificar color de primer plano -> Lo hereda de body*/
 th{
-    /*Advertencia por no especificar color de primer plano. Lo hereda de body*/
     background-color: #4DFE82;
     font-weight: bold;
     font-size: 1.1em;
 }
+
 /*Especificidad: (0, 0, 1)*/
+/*Advertencia por no especificar color de primer plano -> Lo hereda de body*/
 td{
-    /*Advertencia por no especificar color de primer plano. Lo hereda de body*/
     background-color: #FCFF4D;
     text-align: center;
 }
+
+/*Especificidad: (0, 0, 1)*/
+img{
+    width:40%;
+    height:auto;
+}
+
 /*Especificidad: (0, 0, 1)*/
 video{
     width:50%;
     height:auto;
 }
+
 /*Especificidad: (0, 0, 1)*/
 audio{
     width:20%;
@@ -95,16 +135,172 @@ audio{
 
 /*Especificidad: (0, 1, 0)*/
 .active{
-    background-color: #3901A2;
-    color: #24FF99;
+    font-weight: bold;
+    border: solid 0.2em;
+    border-color: #D6CF00;
 }
 
 /*Especificidad: (0, 1, 2)*/
-@media (max-width : 460px){
+@media only screen and (max-width : 460px){
     body > p:first-of-type{
         display: none;
     }
 }
+
+/*Especificidad: (0, 0, 2)*/
+main > div{
+    width: 60%;
+    height: 30em;
+}
+
+/*Especificidad: (0, 0, 1)*/
+svg{
+    width: 50%;
+    height: auto;
+}
+
+/*----------CARRUSEL----------*/
+
+/*Especificidad: (0, 0, 3)*/
+main > div + section{
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; /* <===  */
+    border-radius: 1em;
+}
+
+/*Especificidad: (0, 0, 4)*/
+main > div + section > h3{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+}
+
+/*Especificidad: (0, 0, 4)*/
+main > div + section > img{
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+/*Especificidad: (0, 0, 4)*/
+/*Advertencia por no especificar color de primer plano -> Lo hereda de body*/
+main > div + section > button{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+/*Especificidad: (0, 1, 4)*/
+main > div + section > button:first-of-type{
+    top: 50%;
+    right: 2%;
+}
+
+/*Especificidad: (0, 1, 4)*/
+main > div + section > button:last-of-type{
+    top: 50%;
+    left: 2%;
+}
+
+
+/*-------------REGLAS PARA API.HTML-------------*/
+
+
+/*Especificidad: (0, 0, 1)*/
+/*Advertencia por no especificar color de primer plano. Lo hereda de body*/
+main{
+    /*Hay que especificarlo para la pantalla completa*/
+    background-color: #FFFFFF;
+}
+
+/*Especificidad: (0, 0, 2)*/
+main > article{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Especificidad: (0, 1, 3)*/
+main > article:first-of-type h3,
+main > article:first-of-type p{
+    font-size: 1.7em;
+    margin: 1em;
+}
+
+/*Especificidad: (0, 1, 3)*/
+main > article:last-of-type > h3,
+main > article:last-of-type > p{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/*Especificidad: (0, 1, 2)*/
+article:last-of-type > section{
+    margin: 1em;
+    flex-basis: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Especificidad: (0, 1, 3)*/
+article:last-of-type > section >h3{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+/*Especificidad: (0, 1, 3)*/
+article:last-of-type > section >section{
+    flex-basis: 45%;
+    width: 100%;
+    text-align: center;
+}
+
+/*Especificidad: (0, 1, 2)*/
+article:last-of-type > article{
+    height : 100%;
+    margin : 2em 0.5em 0.5em 0.5em;
+    flex-basis: 18%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+/*Especificidad: (0, 1, 3)*/
+article:last-of-type > article>img,
+article:last-of-type > article>h4{
+    flex-basis: 50%;
+}
+
+/*Especificidad: (0, 1, 3)*/
+article:last-of-type > article>p,
+article:last-of-type > article>button{
+    flex-basis: 100%;
+}
+
 
 
 

@@ -22,6 +22,13 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+     <!--hoja de estilo para los article con la informacion meteorologica-->
+     <link rel="stylesheet" type="text/css" href="estilo/article_elements.css"/>
+
+    <!--REF. JQUERY-->
+    <!--Por encima de cualquier declaración a otros archivos js propios-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/pais.js"></script>
 </head>
 
 <body>
@@ -35,7 +42,7 @@
             <a href="calendario.html" title="Calendario">Calendario</a>
             <a href="meteorología.html" title ="Meteorología" class="active">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
-            <a href="viajes.html" title="Viajes">Viajes</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
             <a href="juegos.html" title="Juegos">Juegos</a>
         </nav>
     </header>
@@ -46,9 +53,23 @@
     </p>
 
     <h2>Meteorología</h2>
-    <p>En desarrollo</p>
+    <main>
+        <p>Información del país</p>
 
-   
+        <h3>País</h3>
+        <p>Información principal</p>
+        <p>
+            <script>
+                var pais = new Pais("Estados Unidos", "Washington D.C", "Circuit of the Americas");
+                pais.writeElements();
+                pais.getWeather();
+            </script>
+        </p>
+
+        <section>
+            <h3>Meteorología de los proximos 5 días</h3>
+        </section>
+    </main>
 
 </body>
 </html>

@@ -23,6 +23,14 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+
+    <!--REF. JQUERY-->
+    <!--Por encima de cualquier declaración a otros archivos js propios-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--Para el mapa del kvl-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&libraries=marker"></script>
+    <!--JavaScript para viajes-->
+    <script src="js/circuito.js"></script>
 </head>
 
 <body>
@@ -36,7 +44,7 @@
             <a href="calendario.html" title="Calendario">Calendario</a>
             <a href="meteorología.html" title ="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito" class="active">Circuito</a>
-            <a href="viajes.html" title="Viajes">Viajes</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
             <a href="juegos.html" title="Juegos">Juegos</a>
         </nav>
     </header>
@@ -45,9 +53,29 @@
         Estás en: <a href="index.html">Inicio</a> >> Circuito
     </p>
     
-    <h2>Circuito</h2>
-    <p>En desarrollo</p>
+    <main>
+        <h2>Circuito</h2>
+        <section>
+            <h3>Subir archivo XML</h3>
+            <label>Seleciona el archivo XML</label>
+            <input type ="file" onchange="cargarXML(this.files);">
+        </section>
 
+        <section>
+            <h3>Subir archivo KML</h3>
+            <label>Seleciona el archivo KML</label>
+            <input type ="file" onchange="cargarKML(this.files);">
+        </section>
+
+        <section>
+            <h3>Subir archivo SVG</h3>
+            <label>Seleciona el archivo SVG</label>
+            <input type ="file" onchange="cargarSVG(this.files);">
+        </section>
+
+        <div></div>
+        
+    </main>
     
 
 </body>

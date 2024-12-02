@@ -6,6 +6,7 @@ header{
     align-items: center;
 }
 
+/*Especificidad: (0, 0, 1)*/
 nav{
     max-width: 100%;
 }

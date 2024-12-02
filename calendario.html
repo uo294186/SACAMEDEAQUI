@@ -22,6 +22,14 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+    <!--hoja de estilo para las carreras-->
+    <link rel="stylesheet" type="text/css" href="estilo/agenda_grid.css"/>
+
+    <!--REF. JQUERY-->
+    <!--Por encima de cualquier declaración a otros archivos js propios-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--script agenda-->
+    <script src="js/agenda.js"></script>
 </head>
 
 <body>
@@ -35,7 +43,7 @@
             <a href="calendario.html" title="Calendario" class="active">Calendario</a>
             <a href="meteorología.html" title ="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
-            <a href="viajes.html" title="Viajes">Viajes</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
             <a href="juegos.html" title="Juegos">Juegos</a>
         </nav>
     </header>
@@ -45,9 +53,13 @@
     </p>
 
     <h2>Calendario</h2>
-    <p>En desarrollo</p>
+    <main>
+        <button>Cargar carreras</button>
+    </main>
 
     
-
+<script>
+    var agenda = new Agenda();
+</script>
 </body>
 </html>

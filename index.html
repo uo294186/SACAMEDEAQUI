@@ -22,6 +22,12 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+
+    <!--REF. JQUERY-->
+    <!--Por encima de cualquier declaración a otros archivos js propios-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/fondo.js"></script>
+
 </head>
 
 <body>
@@ -35,16 +41,16 @@
             <a href="calendario.html" title="Calendario">Calendario</a>
             <a href="meteorología.html" title ="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
-            <a href="viajes.html" title="Viajes">Viajes</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
             <a href="juegos.html" title="Juegos">Juegos</a>
         </nav>
     </header>
-
-
-    <h2>Inicio</h2>
-    <p>En desarrollo</p>
+  
 
     
-
+   <script>
+      var fondo = new Fondo("Estados Unidos", "Washigton D.C", "Circuit of the americas");
+      fondo.getImageCircuit();  
+   </script>
 </body>
 </html>
