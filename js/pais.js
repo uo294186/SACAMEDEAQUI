@@ -46,7 +46,7 @@ class Pais{
     }
 
     getWeather(){
-        var temp = "http://api.openweathermap.org/data/2.5/forecast?lat=30.13&lon=-97.64&mode=xml&units=metric&lang=es&APPID=4a3ec87dba999b5fa97db207c6cfd5eb";
+        var temp = "https://api.openweathermap.org/data/2.5/forecast?lat=30.13&lon=-97.64&mode=xml&units=metric&lang=es&APPID=4a3ec87dba999b5fa97db207c6cfd5eb";
         $.ajax(
             {
                 dataType : "xml",
