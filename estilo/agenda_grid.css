@@ -1,0 +1,45 @@
+/*Especificidad: (0, 0, 1)*/
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+
+}
+
+/*Especificidad: (0, 0, 1)*/
+button{
+    flex-basis: 100%;
+}
+
+/*Especificidad: (0, 0, 1)*/
+section{
+    flex-basis: 25%;
+    height: 100%;
+    margin: 1.5em 0;
+    border: 0.3em solid  #000000;
+    border-radius: 5%;
+    color: #FFF700;
+    background-color: #A30000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Especificidad: (0, 0, 2)*/
+section > h3{
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: 1em 0;
+}
+
+/*Especificidad: (0, 1, 2)*/
+section > p:first-of-type{
+    margin: 2em 0 3em 0;
+}
+
+/*Especificidad: (0, 1, 2)*/
+section > p:nth-of-type(2),
+section > p:last-of-type{
+    font-size: small;
+}

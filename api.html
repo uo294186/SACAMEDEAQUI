@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <!--Titulo del documento-->
+    <title>Juego de Apuestas</title>
+    <link rel="icon" href="multimedia/imágenes/F1Desktopfavicon.ico"/>
+
+    <!--Autor del documento-->
+    <meta name ="author" content="Manuel Méndez Fernández"/>
+
+    <!--Descripción del documento-->
+    <meta name = "description" content="Juego de Apuestas"/>
+    <!--Palabras clave del contenido-->
+    <meta name="keywords" content="f1 juegos, formula1 juegos, juegos apuestas, gambling, apuestas"/>
+
+    <!--Definición ventana gráfica-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <!--hoja de estilo con el layout del documento-->
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+
+    <!--REF. JQUERY-->
+    <!--Por encima de cualquier declaración a otros archivos js propios-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--Javascript de la api-->
+    <script src="js/api.js"></script>
+</head>
+
+<body>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <header>
+        <h1><a href="index.html" title="Inicio">F1 Desktop</a></h1>
+        <nav>
+            <a href="index.html" title="Inicio">Inicio</a>
+            <a href="piloto.html" title="Piloto">Piloto</a>
+            <a href="noticias.html" title="Noticias">Noticias</a>
+            <a href="calendario.html" title="Calendario">Calendario</a>
+            <a href="meteorología.html" title ="Meteorología">Meteorología</a>
+            <a href="circuito.html" title="Circuito">Circuito</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
+            <a href="juegos.html" title="Juegos" class="active">Juegos</a>
+        </nav>
+    </header>
+
+    <p>
+        Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Api  
+    </p>
+
+   
+
+    <h2>Juegos</h2>
+    <p>Lista de juegos</p>
+    <nav>
+        <a href = "memoria.html" title="Juego de Memoria">Juego de Memoria</a>
+        <a href = "semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
+        <a href = "api.html" title="Juego de Apuestas">Apuestas</a>
+    </nav>
+
+    <main>
+        <h2>Apuestas</h2>
+
+        <button>Pantalla completa</button>
+
+        <!--Aquí se mostraran los puntos del jugador-->
+        <article>
+            <h3>Puntos disponibles: </h3>
+            <p></p>
+        </article>
+
+        <!--Aquí se mostrará a los pilotos con sus datos para que el jugador escoja-->
+        <article>
+            <h3>Comienza a apostar</h3>
+            <!--Aquí va los inputs para lo apostado-->
+            <section>
+                <h3>Formas de apostar</h3>
+                <section>
+                    <h4>Apostar una vez</h4>
+                    <!--Este p se usará para mostrar errores con el input-->
+                    <p hidden></p>
+                    <label for="cantidad">Cantidad a apostar</label>
+                    <input type = "number" id="cantidad">
+                </section>
+                <!--Aquí está el leector de archivos para múltiples apuestas-->
+                <section>
+                    <h4>Apostar varias veces</h4>
+                    <!--Para mostrar errores con el archivo-->
+                    <p hidden></p>
+                    <label for="archivo">Suba su archivo con las apuestas siguiendo el <a href="api_formato.html">formato</a></label>
+                    <input type = "file" onchange="apuestas.readFile(this.files)" id = "archivo">
+                </section>
+            </section>
+
+
+            
+        </article>
+    </main>
+
+   
+
+    <script>
+        var apuestas = new Apuestas();
+    </script>
+</body>
+</html>
