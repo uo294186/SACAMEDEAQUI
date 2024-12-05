@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<circuitoEsquema 
+xmlns="http://www.uniovi.es"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.uniovi.es circuito.xsd"
+>
+    <circuit name="C. of the Americas" numberLaps="56">
+        <date time="20:00:00">2024-10-20</date>
+        <location country="Estados Unidos">Austin</location>
+        <length units="km">5513</length>
+        <width units="m">24</width>
+        <references>
+            <reference>https://circuitoftheamericas.com/</reference>
+            <reference>https://www.formula1.com/en/information/united-states-circuit-of-the-americas-austin.5RpZ6us0a3FoaoRxTMpbxI</reference>
+            <reference>https://www.austintexas.org/listings/circuit-of-the-americas-cota/6879/</reference>
+        </references>
+        <fotos>
+            <foto>/F1Desktop/xml/circuit_foto_1.jpg</foto>
+            <foto>/F1Desktop/xml/circuit_foto_2.png</foto>
+        </fotos>
+        <videos></videos>
+        <coordinates latitude="30.1316667" longitude="-97.63944444444445" height="164"></coordinates>
+        <sections>
+            <section distance="780.71" latitude="30.130027" longitude="-97.636873" height="184">1</section>
+            <section distance="190.12" latitude="30.131690" longitude="-97.637341" height="169">2</section>
+            <section distance="62.05" latitude="30.132246" longitude="-97.637248" height="166">3</section>
+            <section distance="60.2" latitude="30.132656" longitude="-97.636830" height="165">4</section>
+            <section distance="179.55" latitude="30.133524" longitude="-97.635254" height="168">5</section>
+            <section distance="111.07" latitude="30.134396" longitude="-97.634680" height="166">6</section>
+            <section distance="80.57" latitude="30.134719" longitude="-97.633931" height="166">7</section>
+            <section distance="107.95" latitude="30.135643" longitude="-97.633570" height="165">8</section>
+            <section distance="65.37" latitude="30.136053" longitude="-97.633081" height="165">9</section>
+            <section distance="52.93" latitude="30.136199" longitude="-97.632557" height="166">10</section>
+            <section distance="143.98" latitude="30.135737" longitude="-97.631160" height="168">11</section>
+            <section distance="118.16" latitude="30.136434" longitude="-97.630234" height="170">12</section>
+            <section distance="53.24" latitude="30.136653" longitude="-97.629740" height="172">13</section>
+            <section distance="64.68" latitude="30.136304" longitude="-97.629206" height="176">14</section>
+            <section distance="30.25" latitude="30.136159" longitude="-97.628929" height="178">15</section>
+            <section distance="182.17" latitude="30.136531" longitude="-97.627088" height="176">16</section>
+            <section distance="402.56" latitude="30.139374" longitude="-97.624489" height="170">17</section>
+            <section distance="1192.11" latitude="30.137329" longitude="-97.636635" height="161">18</section>
+            <section distance="218.02" latitude="30.135648" longitude="-97.635463" height="163">19</section>
+            <section distance="91.38" latitude="30.135603" longitude="-97.636406" height="163">20</section>
+            <section distance="59.8" latitude="30.136089" longitude="-97.636677" height="162">21</section>
+            <section distance="69.02" latitude="30.136547" longitude="-97.637153" height="161">22</section>
+            <section distance="60.81" latitude="30.136549" longitude="-97.637782" height="162">23</section>
+            <section distance="204.26" latitude="30.134908" longitude="-97.636812" height="163">24</section>
+            <section distance="97.74" latitude="30.134055" longitude="-97.637075" height="165">25</section>
+            <section distance="103.33" latitude="30.133635" longitude="-97.638035" height="165">26</section>
+            <section distance="70.07" latitude="30.133730" longitude="-97.638752" height="164">27</section>
+            <section distance="59.1" latitude="30.134012" longitude="-97.639270" height="161">28</section>
+            <section distance="215.46" latitude="30.135528" longitude="-97.640670" height="158">29</section>
+            <section distance="280.71" latitude="30.134590" longitude="-97.643371" height="156">30</section>
+            <section distance="36.24" latitude="30.134258" longitude="-97.643349" height="157">31</section>
+        </sections>
+    </circuit>
+</circuitoEsquema>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.uniovi.es"
+	xmlns="http://www.uniovi.es"
+	elementFormDefault="qualified">
+	<xs:element name="circuitoEsquema">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="circuit">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="date" />
+							<xs:element ref="location" />
+							<xs:element ref="length" />
+							<xs:element ref="width" />
+							<xs:element ref="references" />
+							<xs:element ref="fotos" />
+							<xs:element ref="videos" />
+							<xs:element ref="coordinates" />
+							<xs:element ref="sections" />
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="numberLaps" type="positiveInt-type" use="required" />
+					</xs:complexType>
+				</xs:element>
+	</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="positiveDecimal-type">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0.00"></xs:minInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="positiveInt-type">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"></xs:minInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="date">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:date">
+					<xs:attribute name="time" type="xs:time" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="location">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="country" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="references">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="3" maxOccurs="unbounded" ref="reference" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="length">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="positiveDecimal-type">
+					<xs:attribute name="units" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="width">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="positiveDecimal-type">
+					<xs:attribute name="units" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reference" type="xs:string" />
+	<xs:element name="fotos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="5" ref="foto" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="foto" type="xs:string" />
+	<xs:element name="videos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="3" ref="video" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="video" type="xs:string" />
+	<xs:element name="coordinates">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="latitude" type="latitude-type" use="required" />
+					<xs:attribute name="longitude" type="longitude-type" use="required" />
+					<xs:attribute name="height" type="xs:decimal" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="latitude-type">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-90"></xs:minInclusive>
+			<xs:maxInclusive value ="90"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="longitude-type">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-180"></xs:minInclusive>
+			<xs:maxInclusive value ="180"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="sections">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="section" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="section">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="distance" type="positiveDecimal-type" use="required" />
+					<xs:attribute name="latitude" type="latitude-type" use="required" />
+					<xs:attribute name="longitude" type="longitude-type" use="required" />
+					<xs:attribute name="height" type="xs:decimal" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>

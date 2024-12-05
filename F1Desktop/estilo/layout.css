@@ -1,0 +1,12 @@
+/*Especificidad: (0, 0, 1)*/
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Especificidad: (0, 0, 1)*/
+nav{
+    max-width: 100%;
+}
