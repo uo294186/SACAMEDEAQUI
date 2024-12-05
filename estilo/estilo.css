@@ -20,6 +20,10 @@ header a{
     text-decoration-line: none;
 }
 
+header nav a {
+    font-size: 1.5em;
+}
+
 /*Especificidad: (0, 1, 2)*/
 /*Advertencia por no definir color de fondo -> Lo hereda del header*/
 header a:link{
