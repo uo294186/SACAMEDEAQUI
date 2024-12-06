@@ -24,6 +24,7 @@ class Agenda{
                     var hora = race.time;
 
                     var section = $("<section></section>");
+                    section.attr("lang", "en");
 
                     section.append($("<h3></h3>").text(nombreCarrera));
                     section.append($("<p></p>").text(nombreCircuito));
