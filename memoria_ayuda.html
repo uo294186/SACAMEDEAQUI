@@ -5,14 +5,14 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <!--Titulo del documento-->
-    <title>Juego de Memoria</title>
+    <title>Ayuda Juego de Memoria</title>
     <link rel="icon" href="multimedia/imágenes/F1Desktopfavicon.ico"/>
 
     <!--Autor del documento-->
     <meta name ="author" content="Manuel Méndez Fernández"/>
 
     <!--Descripción del documento-->
-    <meta name = "description" content="Juego de Memoria"/>
+    <meta name = "description" content="Ayuda Juego de Memoria"/>
     <!--Palabras clave del contenido-->
     <meta name="keywords" content="f1 juegos, formula1 juegos, juegos memoria"/>
 
@@ -23,9 +23,6 @@
     <!--hoja de estilo con el layout del documento-->
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
 
-    <!--hoja de estilo con el estilo para el juego-->
-    <link rel="stylesheet" type="text/css" href="estilo/memoria.css"/>
-    <script src="js/memoria.js"></script>
 </head>
 
 <body>
@@ -45,7 +42,7 @@
     </header>
 
     <p>
-        Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Juego de Memoria  
+        Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> <a href="memoria.html">Juego de Memoria</a> >> Ayuda  
     </p>
 
    
@@ -57,16 +54,21 @@
         <a href = "semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
         <a href = "api.html" title="Juego de Apuestas">Apuestas</a>
     </nav>
-    <p>¿Primera vez? -> <a href="memoria_ayuda.html"> ¿Cómo jugar?</a></p>
-    <section>
-        <h2>Juego de Memoria</h2>
-    </section>
+    <main>
+        <h2>Ayuda Juego de Memoria</h2>
+        <p>En cuanto la página carge, el juego ya se puede jugar</p>
+
+        <h3>¿Cómo jugar?</h3>
+        <p>Haz click en una carta para darle la vuelta</p>
+        <img atl="Imágen seleccion de carta" src="multimedia/imágenes/mem_ayuda1.PNG"/>
+        <img src="multimedia/imágenes/mem_ayuda2.PNG" alt ="Imágen carta volteada"/>
+        
+        <p>Haz click en otra para ver si coincide con la anterior</p>
+        <img src = "multimedia/imágenes/mem_ayuda3.PNG" alt ="Imágen dos cartas volteadas que no coinciden"/>
+
+        <p>Cuando coincidan se mantendrán boca arriba</p>
+        <p>Ganas cuando todas las cartas estén boca arriba</p>
+    </main>
     
-
-   
-
-    <script>
-        var memoria = new Memoria();
-    </script>
 </body>
 </html>

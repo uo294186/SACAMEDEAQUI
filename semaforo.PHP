@@ -30,6 +30,59 @@
             public function getDbname(){
                 return $this->dbname;
             }
+
+            public function saveResult(){
+                if(count($_POST) > 0){
+            
+                    $db = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
+            
+                    //$db = new mysqli("localhost", "DBUSER2024", "DBPSWD2024", "records");
+            
+                    if($db->connect_errno){
+                        echo "<p>No se pudo acceder a la base de datos</p>";
+                    }else{
+                        $query = $db->prepare("insert into registro (nombre, apellido, nivel, tiempo) values (?,?,?,?)");
+            
+                        $query->bind_param('ssdd', 
+                            $_POST["nombre"], $_POST["apellido"],$_POST["nivel"],$_POST["tiempo"]);
+                        
+                        $query->execute();
+            
+                        $query->close();
+                        $db->close();
+
+                        $this->showTop10($_POST["nivel"]);
+                    }
+                }
+            }
+
+            public function showTop10($level){
+                if(count($_POST) > 0){
+            
+                    $db = new mysqli($this->server, $this->user, $this->pass, $this->dbname);
+            
+                    //$db = new mysqli("localhost", "DBUSER2024", "DBPSWD2024", "records");
+            
+                    if($db->connect_errno){
+                        echo "<p>No se pudo acceder a la base de datos</p>";
+                    }else{
+            
+                        $query = $db->prepare("select * from registro where nivel = ? order by tiempo asc limit 10");
+            
+                        $query->bind_param("d", $level);
+
+                        $query->execute();
+
+                        $res = $query->get_result();
+                        echo "<h3> Ranking top 10 </h3>";
+                        echo "<ol>";
+                        while($r = $res->fetch_assoc()){
+                            echo "<li>".$r["nombre"]."-".$r["apellido"]."-".$r["nivel"]."-".$r["tiempo"]."</li>";
+                        }
+                        echo "</ol>";
+                    }
+                }
+            }
         }
     ?>
 
@@ -107,39 +160,8 @@
     var semaforo = new Semaforo();
 </script>
 <?php 
-    if(count($_POST) > 0){
-        $record = new Record();
-
-        $db = new mysqli($record->getServer(), $record->getUser(), $record->getPass(), $record->getDbname());
-
-        //$db = new mysqli("localhost", "DBUSER2024", "DBPSWD2024", "records");
-
-        if($db->connect_errno){
-            echo "<p>No se pudo acceder a la base de datos</p>";
-        }else{
-            $query = $db->prepare("insert into registro (nombre, apellido, nivel, tiempo) values (?,?,?,?)");
-
-            $query->bind_param('ssdd', 
-                $_POST["nombre"], $_POST["apellido"],$_POST["nivel"],$_POST["tiempo"]);
-            
-            $query->execute();
-
-            $query->close();
-            //$db->close();
-
-            $query = "select * from registro order by tiempo asc limit 10";
-
-            $res = $db->query($query);
-
-            echo "<h3> Ranking top 10 </h3>";
-            echo "<ol>";
-            while($r = $res->fetch_assoc()){
-                echo "<li>".$r["nombre"]."-".$r["apellido"]."-".$r["nivel"]."-".$r["tiempo"]."</li>";
-            }
-            echo "</ol>";
-        }
-    }
-
+    $record = new Record();
+    $record->saveResult();
 ?>
 </body>
 </html>
