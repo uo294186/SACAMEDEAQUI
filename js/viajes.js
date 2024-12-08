@@ -65,7 +65,9 @@ class Viajes{
     async showDynamicMap(){
         var centro = {lat: 0, lng:0};
 
-        var mapa = await new google.maps.Map(document.querySelector("main div"), {
+        const { Map } = await google.maps.importLibrary("maps");
+
+        var mapa = new Map(document.querySelector("main div"), {
             zoom : 15,
             center: centro,
             mapTypeId: google.maps.MapTypeId.ROADMAP
