@@ -16,6 +16,10 @@ class Viajes{
     }
 
     error(err){
+        this.longitud = 0;
+        this.latitud = 0;
+        this.altitud = 0;
+
         var message = "ERROR";
 
         switch(err.code){
@@ -34,7 +38,7 @@ class Viajes{
                 break;
         }
 
-        $("main").append("<p></p>").text(message);
+        $("main > section:first").append("<p></p>").text(message);
 
     }
 
