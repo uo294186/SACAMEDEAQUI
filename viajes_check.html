@@ -26,7 +26,7 @@
     <!--Por encima de cualquier declaración a otros archivos js propios-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
      <!--JavaScript para viajes-->
-     <script src="js/viajes.js"></script>
+     
 </head>
 
 <body>
@@ -51,7 +51,8 @@
 
     <h2>Viajes</h2>
     <main>
-        <p>1€ equivale a 1.0568$</p>        
+        <p>1€ equivale a 1.0568$</p>  
+		<script src="js/viajes.js"></script>		
 		<section>
             <h3>Mapa estático</h3>
 		</section>
@@ -66,5 +67,7 @@
         
        
     </main>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&amp;callback=viaje.showDynamicMap">
+</script>
 
 </body></html>
