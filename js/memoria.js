@@ -52,7 +52,7 @@ class Memoria{
             this.firstCard.removeAttribute("data-state");
             this.secondCard.removeAttribute("data-state");
             this.resetBoard();
-        }, 1500);
+        }, 700);
         
         
 

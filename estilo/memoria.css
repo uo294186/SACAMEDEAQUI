@@ -64,4 +64,8 @@ section h2{
     section{
         width: 100%;
     }
+
+    article{
+        height: 9em;
+    }
 }
