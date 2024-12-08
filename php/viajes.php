@@ -5,6 +5,7 @@
     class Carrusel{
         private $capital;
         private $pais;
+        private $photos;
         public function __construct($capital, $pais){
             $this->capital = $capital;
             $this->pais = $pais;
@@ -33,19 +34,10 @@
 
             if($json != null){
                 $photos = $json->photos;
-                for($i = 0; $i<10; $i++){
-                    $photo = $photos->photo[$i];
-
-                    $src = "https://live.staticflickr.com/".$photo->server."/".$photo->id."_".$photo->secret.".jpg";
-
-                    $img = "<img src=".$src." alt= 'Foto del Pais' />";
-
-                    echo $img;
-                }
+                $this->photos = $photos->photo;
             }
 
-            echo "<button> &gt </button>";
-            echo "<button> &lt </button>";
+            echo $this->photos;
         }
     }
 ?>
@@ -107,7 +99,7 @@
                 $carrousel->createCarrusel();
             ?>
             <script>
-                viaje.handleCarrusel();
+                //viaje.handleCarrusel();
             </script>
         </article>
         <div></div>

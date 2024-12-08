@@ -136,8 +136,6 @@
         ?>
         <section>
             <h3>Mapa estático</h3>
-            <script> var viajes = new Viajes()
-            </script>
         </section>
         <div></div>
         <section>
@@ -147,13 +145,13 @@
             $carrousel->createCarrusel();
             ?>
             <script>
-                viajes.handleCarrusel();
+                viaje.handleCarrusel();
             </script>
         </section>
         
        
     </main>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viajes.showDynamicMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viaje.showDynamicMap">
 </script>
 </body>
 </html>
