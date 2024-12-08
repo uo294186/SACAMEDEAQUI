@@ -10,9 +10,7 @@ class Viajes{
         this.longitud = pos.coords.longitude;
         this.latitud = pos.coords.latitude;
         this.altitud = pos.coords.altitude;
-
         this.showStaticMap();
-
     }
 
     error(err){
@@ -38,7 +36,7 @@ class Viajes{
 
     }
 
-    showStaticMap(){
+    async showStaticMap(){
         var p = $("<p></p>");
         
         p.text("Mapa estático");
@@ -64,10 +62,10 @@ class Viajes{
         
     }
 
-    showDynamicMap(){
+    async showDynamicMap(){
         var centro = {lat: 0, lng:0};
 
-        var mapa = new google.maps.Map(document.querySelector("main div"), {
+        var mapa = await new google.maps.Map(document.querySelector("main div"), {
             zoom : 15,
             center: centro,
             mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -139,6 +137,11 @@ class Viajes{
 
 
         }
+
+
+}
+
+
 
 
 }
