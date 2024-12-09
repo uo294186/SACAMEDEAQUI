@@ -144,14 +144,15 @@
             $carrousel = new Carrusel("Washington D.C", "Estados Unidos");
             $carrousel->createCarrusel();
             ?>
-            <script>
-                viaje.handleCarrusel();
-            </script>
         </section>
         
        
     </main>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viaje.showDynamicMap">
+<script>
+        var viaje = new Viajes();
+        viaje.handleCarrusel();
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viaje.showDynamicMap&loading=async">
 </script>
 </body>
 </html>
