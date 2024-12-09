@@ -153,8 +153,8 @@ audio{
 
 /*Especificidad: (0, 0, 2)*/
 main > div{
-    width: 60%;
-    height: 30em;
+    width: 30%;
+    height: 10em;
 }
 
 /*Especificidad: (0, 0, 1)*/
