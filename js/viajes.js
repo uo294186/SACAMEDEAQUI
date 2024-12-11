@@ -12,7 +12,7 @@ class Viajes{
         this.longitud = pos.coords.longitude;
         this.latitud = pos.coords.latitude;
         this.altitud = pos.coords.altitude;
-        //this.showStaticMap();
+        this.locAvailable = true;
 
     }
 
@@ -20,6 +20,8 @@ class Viajes{
         this.longitud = 0;
         this.latitud = 0;
         this.altitud = 0;
+
+        this.locAvailable = false;
 
         var message = "ERROR";
 
@@ -44,27 +46,34 @@ class Viajes{
     }
 
     showStaticMap(){
+
+        if(this.locAvailable){
+            var apiKey = "&key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU";
+            var url = "https://maps.googleapis.com/maps/api/staticmap?";
+            var centro = "center="+this.latitud+","+this.longitud;
+            var tamaño = "&size=800x600";
+            var marcador = "&markers=color:red%7Clabel:P%7C"+this.latitud+","+this.longitud;
+
+            var mapaImagen = url+centro+tamaño+marcador+apiKey;
+            var img = $("<img>")
+            img.attr({
+                src : mapaImagen,
+                alt : "mapa estático de tu localización"
+            });
+
+            
+            $("main > section:first").append(img);
+            $("main>section:first-of-type>button").hide();
+
+        }
     
-        var apiKey = "&key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU";
-        var url = "https://maps.googleapis.com/maps/api/staticmap?";
-        var centro = "center="+this.latitud+","+this.longitud;
-        var tamaño = "&size=800x600";
-        var marcador = "&markers=color:red%7Clabel:P%7C"+this.latitud+","+this.longitud;
-
-        var mapaImagen = url+centro+tamaño+marcador+apiKey;
-        var img = $("<img>")
-        img.attr({
-            src : mapaImagen,
-            alt : "mapa estático de tu localización"
-        });
-
         
-        $("main > section:first").append(img);
-        $("main>section:first-of-type>button").hide();
-        
+    }
 
-
-        
+    loadDynamicMapButtonEvent(){
+        var button = document.querySelector("main > button");
+        button.onclick = this.showDynamicMap.bind(this);
+        button.removeAttribute("hidden");
     }
 
     showDynamicMap(){
@@ -97,6 +106,8 @@ class Viajes{
             })  
             
         }
+
+        $("main > button").hide();
     }
 
     handleCarrusel(){

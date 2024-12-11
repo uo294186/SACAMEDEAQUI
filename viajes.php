@@ -138,7 +138,8 @@
             <h3>Mapa estático</h3>
             <button>Generar mapa estático</button>
         </section>
-        <button>Generar mapa dinámico</button>
+        <!--Escondido de normal, lo mostraremos cuando se carge la API de Google maps-->
+        <button hidden>Generar mapa dinámico</button>
         <div></div>
         <section>
             <h3>Fotos</h3>
@@ -154,6 +155,7 @@
         var viaje = new Viajes();
         viaje.handleCarrusel();
 </script>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viaje.loadDynamicMapButtonEvent&loading=async">
+</script>
 </body>
 </html>
