@@ -4,14 +4,15 @@ class Viajes{
     
     constructor(){
         navigator.geolocation.getCurrentPosition(this.getInfo.bind(this), this.error.bind(this));
+        document.querySelector("main >section:first-of-type>button").onclick = this.showStaticMap.bind(this);
+
     }
 
     getInfo(pos){
         this.longitud = pos.coords.longitude;
         this.latitud = pos.coords.latitude;
         this.altitud = pos.coords.altitude;
-
-        this.showStaticMap();
+        //this.showStaticMap();
 
     }
 
@@ -59,6 +60,7 @@ class Viajes{
 
         
         $("main > section:first").append(img);
+        $("main>section:first-of-type>button").hide();
         
 
 
@@ -98,10 +100,10 @@ class Viajes{
     }
 
     handleCarrusel(){
-        var imagenes = document.querySelectorAll("main > section img");
+        var imagenes = document.querySelectorAll("main > section:last-of-type img");
 
-        var nextButton = document.querySelector("section > button:first-of-type");
-        var prevButton = document.querySelector("section > button:last-of-type");
+        var nextButton = document.querySelector("section:last-of-type > button:first-of-type");
+        var prevButton = document.querySelector("section:last-of-type > button:last-of-type");
 
         var currImg = 0;
         var maxImg = imagenes.length-1;

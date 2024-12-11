@@ -132,11 +132,13 @@
     <main>
         <?php
         $moneda = new Moneda("EUR", "USD");
-        $moneda->currencyExchange();
+        //$moneda->currencyExchange();
         ?>
         <section>
             <h3>Mapa estático</h3>
+            <button>Generar mapa estático</button>
         </section>
+        <button>Generar mapa dinámico</button>
         <div></div>
         <section>
             <h3>Fotos</h3>
@@ -152,7 +154,6 @@
         var viaje = new Viajes();
         viaje.handleCarrusel();
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcJRBapIIqkmhOtDcY0bxmKJF81y1lWIw&callback=viaje.showDynamicMap&loading=async">
-</script>
+
 </body>
 </html>
